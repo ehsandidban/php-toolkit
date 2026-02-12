@@ -36,11 +36,11 @@ function send_sms($phone, $first_name)
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
     $response = curl_exec($ch);
-    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
 
-    return [
-        'status_code' => $http_code,
-        'response' => $response
-    ];
+    return $response;
 }
+
+# test of the code
+$result = send_sms('your_test_number', 'example');
+print_r(json_decode($result, true));
