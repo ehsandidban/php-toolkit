@@ -1,7 +1,9 @@
 <?php
 
-# example for a template with 1 param
-# if your template has more params, esaily you can add.
+# this is a function for send sms with ghasedak sms panel
+# this example is for a template with 1 param
+# if your template has more params, easily you can add
+
 function send_sms($phone, $first_name)
 {
     $api_key = 'type_your_api_key_here';
