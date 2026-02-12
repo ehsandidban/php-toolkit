@@ -1,4 +1,7 @@
 <?php
+
+# this is a function for send sms with pattern / template through kave-negar sms panel
+
 function send_sms($phone, $token)
 {
     $api_key = 'type_your_api_key_here';
