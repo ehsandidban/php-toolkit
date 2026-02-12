@@ -1,6 +1,6 @@
 <?php
 
-# this is a function for send sms with ghasedak sms panel
+# this is a function for send sms with template / pattern through ghasedak sms panel
 # this example is for a template with 1 param
 # if your template has more params, easily you can add
 
