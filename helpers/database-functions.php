@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Function to use for insert data in database
+ * function for create mysql insert query
  */
 
 function db_insert(string $table, array $data)
