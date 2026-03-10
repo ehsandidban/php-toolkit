@@ -15,7 +15,8 @@ function db_insert(string $table, array $data)
     $sql_vals = [];
     foreach ($vals as $val) {
         if ($val === NULL) {
-            $val = 'NULL';
+            $sql_vals[] = "NULL";
+            continue;
         }
         $sql_vals[] = "'$val'";
     }
@@ -33,5 +34,5 @@ db_insert('users',[
     'name' => 'Ehsan',
     'family' => 'Didbabn',
     'age' => 32,
-    'job' => 'Programmer'
+    'job' => null
 ]);
