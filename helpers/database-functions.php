@@ -65,6 +65,28 @@ function db_update($table, $data, $where)
     print_r($sql);
 }
 
+function db_delete($table, $where)
+{
+    // generate WHERE of query
+    if (is_array($where)) {
+        $where_sql = '';
+        foreach ($where as $key => $value) {
+            if ($value === NULL) {
+                $where_sql .= "IS NULL AND ";
+                continue;
+            }
+            $where_sql .= "$key = '$value' AND ";
+        }
+        $where_sql = trim($where_sql, 'AND ');
+    } else {
+        $where_sql = $where;
+    }
+
+    // generate query
+    $sql = "DELETE FROM $table WHERE $where_sql";
+    print_r($sql);
+
+}
 // Test
 // db_insert('users',[
 //     'name' => 'Ehsan',
@@ -81,3 +103,5 @@ function db_update($table, $data, $where)
 //     'uid' => null,
 //     'phone' => null
 // ]);
+
+// db_delete('tests',"name = 'Ehsan' OR family = 'Didban'");
