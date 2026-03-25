@@ -1,10 +1,9 @@
 <?php
 
-function send_sms($phone, $name)
+function send_sms($phone, $message)
 {
     $apiKey = 'TYPE_YOUR_API_KEY_HERE';
     $sender = 'SENDER_PHONE_NUMBER_FROM_SMS_PANEL';
-    $message = $name . 'YOUR_MESSAGE';
     $url = "https://api.kavenegar.com/v1/{$apiKey}/sms/send.json";
 
     $postData = [
@@ -15,9 +14,9 @@ function send_sms($phone, $name)
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($postData));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_POST, true);
 
     $response = curl_exec($ch);
     curl_close($ch);
