@@ -4,7 +4,7 @@ function send_sms($phone, $message)
 {
     $apiKey = 'TYPE_YOUR_API_KEY_HERE';
     $sender = 'SENDER_PHONE_NUMBER_FROM_SMS_PANEL';
-    $url = "https://api.kavenegar.com/v1/{$apiKey}/sms/send.json";
+    $url = "https://api.kavenegar.com/v1/$apiKey/sms/send.json";
 
     $postData = [
         'receptor' => $phone,
